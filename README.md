@@ -11,3 +11,4 @@ A word game in which the user is searching for a given word within 6 attempts.
 - Interacting with API to retrieve word of the day.
 
 ## Snapshot
+![Screenshot](docs/word-master-snapshot.png)
