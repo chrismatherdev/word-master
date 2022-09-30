@@ -9,18 +9,19 @@ async function wordMaster() {
   const res = await fetch('https://words.dev-apis.com/word-of-the-day');
   const { word: wordRes } = await res.json();
   const word = wordRes.toUpperCase();
+  const wordCheck = word + word + word + word + word;
   console.log(word);
 
   function guessChecker() {
     for (let i = 0; i < GUESS_LENGTH; i++) {
-      console.log(word[i]);
+      console.log(wordCheck[i]);
       console.log(gameBoardDivs[i]);
-      if (gameBoardDivs[i].innerHTML.toUpperCase() === word[i]) {
+      if (gameBoardDivs[i].innerHTML.toUpperCase() === wordCheck[i]) {
         console.log('match!');
         gameBoardDivs[i].style.backgroundColor = 'green';
         gameBoardDivs[i].style.color = 'white';
         correctLetter++;
-      } else if (gameBoardDivs[i].innerHTML.toUpperCase() !== word[i]) {
+      } else if (gameBoardDivs[i].innerHTML.toUpperCase() !== wordCheck[i]) {
         gameBoardDivs[i].style.backgroundColor = 'grey';
         gameBoardDivs[i].style.color = 'white';
       }
